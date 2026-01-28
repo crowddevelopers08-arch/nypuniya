@@ -1,7 +1,7 @@
 import React from "react"
 
 type ClinicHeaderProps = {
-  logoSrc: string
+  logoSrc?: string
   clinicName?: string
   tagline?: string
   phoneLabel?: string
@@ -9,7 +9,7 @@ type ClinicHeaderProps = {
 }
 
 export default function ClinicHeader({
-  logoSrc,
+  logoSrc = "/logo.png",
   clinicName = "NYPUNYA AESTHETIC CLINIC",
   tagline = "ONLY THE BEST FOR YOU",
   phoneLabel = "Call Now",
@@ -17,10 +17,8 @@ export default function ClinicHeader({
 }: ClinicHeaderProps) {
   return (
     <header className="w-full bg-white border-y border-neutral-200">
-      {/* Responsive container */}
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10">
         <div className="h-[74px] sm:h-[88px] lg:h-[98px] flex items-center justify-between">
-          {/* LEFT: Logo + Text (kept neatly left, responsive) */}
           <div className="flex items-center gap-3 sm:gap-4 min-w-0">
             <img
               src={logoSrc}
@@ -39,7 +37,6 @@ export default function ClinicHeader({
             </div>
           </div>
 
-          {/* RIGHT: Call button */}
           <button
             type="button"
             onClick={onCallNow}
