@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Geist, Manrope, Outfit } from "next/font/google"
 import "./globals.css"
+import MobileActionBar from "@/component/mobile-bar"
 
 const geist = Geist({
   subsets: ["latin"],
@@ -50,7 +51,9 @@ export default function RootLayout({
       className={`${geist.variable} ${manrope.variable} ${outfit.variable} antialiased`}
     >
       <head />
-      <body className="--font-outfit">{children}</body>
+      <body className="--font-outfit">{children}
+        <MobileActionBar />
+      </body>
     </html>
   )
 }

@@ -61,29 +61,30 @@ const ConsultationForm = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 z-50 animate-fadeIn">
-      <div className="bg-white rounded-2xl max-w-md w-full p-8 animate-slideUp">
-        <div className="flex justify-between items-center mb-2">
-          <div className="flex flex-col items-right">
-            <h3 className="text-2xl font-bold text-gray-800">
+    <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 md:p-6 z-50 animate-fadeIn">
+      <div className="bg-white rounded-xl sm:rounded-2xl max-w-xs xs:max-w-sm sm:max-w-md md:max-w-lg w-full p-4 sm:p-6 md:p-8 animate-slideUp max-h-[90vh] overflow-y-auto">
+        <div className="flex justify-between items-center mb-4 sm:mb-2">
+          <div className="flex flex-col">
+            <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-800">
               Book Your Consultation
             </h3>
-            <p className="text-gray-600 mt-1">
+            <p className="text-gray-600 mt-1 text-sm sm:text-base">
               Please enter your details below
             </p>
           </div>
           <button
             onClick={onClose}
-            className="text-gray-400 hover:text-gray-600 text-2xl flex items-right"
+            className="text-gray-400 hover:text-gray-600 text-xl sm:text-2xl md:text-3xl"
             type="button"
+            aria-label="Close"
           >
             ×
           </button>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-2">
+        <form onSubmit={handleSubmit} className="space-y-1 sm:space-y-2">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm sm:text-base font-medium text-gray-700 mb-1 sm:mb-2">
               Full Name
             </label>
             <input
@@ -92,13 +93,13 @@ const ConsultationForm = ({
               required
               value={formData.name}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+              className="w-full px-3 py-2.5 sm:px-4 sm:py-3 border border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-sm sm:text-base"
               placeholder="Your Full Name"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm sm:text-base font-medium text-gray-700 mb-1 sm:mb-2">
               Mobile Number
             </label>
             <input
@@ -107,13 +108,15 @@ const ConsultationForm = ({
               required
               value={formData.phone}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+              className="w-full px-3 py-2.5 sm:px-4 sm:py-3 border border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-sm sm:text-base"
               placeholder="10-digit mobile number"
+              pattern="[0-9]{10}"
+              maxLength={10}
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm sm:text-base font-medium text-gray-700 mb-1 sm:mb-2">
               Email Address
             </label>
             <input
@@ -122,14 +125,13 @@ const ConsultationForm = ({
               required
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+              className="w-full px-3 py-2.5 sm:px-4 sm:py-3 border border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-sm sm:text-base"
               placeholder="example@gmail.com"
             />
           </div>
 
-          {/* ✅ DROPDOWN FIELD ADDED (Area) */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm sm:text-base font-medium text-gray-700 mb-1 sm:mb-2">
               Select Consultant
             </label>
             <select
@@ -137,7 +139,7 @@ const ConsultationForm = ({
               required
               value={formData.area}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-white"
+              className="w-full px-3 py-2.5 sm:px-4 sm:py-3 border border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-white text-sm sm:text-base"
             >
               <option value="">Select Consultant</option>
               <option value="Anna Nagar">Consultation with Assistant Doctor</option>
@@ -146,7 +148,7 @@ const ConsultationForm = ({
           </div>
           
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm sm:text-base font-medium text-gray-700 mb-1 sm:mb-2">
               Area / Location 
             </label>
             <input
@@ -155,16 +157,16 @@ const ConsultationForm = ({
               required
               value={formData.location}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+              className="w-full px-3 py-2.5 sm:px-4 sm:py-3 border border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-sm sm:text-base"
               placeholder="Enter your location"
             />
           </div>
 
           <button
             type="submit"
-            className="w-full mt-2 bg-[#002171] hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-6 cursor-pointer rounded-xl text-lg transition-all duration-300 hover:scale-[1.02] shadow-lg"
+            className="w-full mt-0 sm:mt-2 bg-[#002171] hover:bg-blue-900 text-white font-semibold sm:font-bold py-3 sm:py-4 px-4 sm:px-6 cursor-pointer rounded-lg sm:rounded-xl text-base sm:text-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl"
           >
-            <FaCalendarCheck className="inline mr-3" />
+            <FaCalendarCheck className="inline mr-2 sm:mr-3 w-4 h-4 sm:w-5 sm:h-5" />
             Schedule Appointment
           </button>
         </form>
