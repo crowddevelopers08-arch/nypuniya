@@ -1,9 +1,25 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, ChangeEvent, FormEvent } from "react";
 import { FaCalendarCheck } from "react-icons/fa";
 
-const EMPTY_FORM = {
+// Define types
+interface FormData {
+  name: string;
+  phone: string;
+  email: string;
+  area: string;
+  location: string;
+}
+
+interface ConsultationFormProps {
+  isOpen: boolean;
+  onClose: () => void;
+  onSubmit: (formData: FormData) => void;
+  initialData?: Partial<FormData>;
+}
+
+const EMPTY_FORM: FormData = {
   name: "",
   phone: "",
   email: "",
@@ -11,8 +27,13 @@ const EMPTY_FORM = {
   location: "",
 };
 
-const ConsultationForm = ({ isOpen, onClose, onSubmit, initialData }) => {
-  const [formData, setFormData] = useState(EMPTY_FORM);
+const ConsultationForm = ({ 
+  isOpen, 
+  onClose, 
+  onSubmit, 
+  initialData 
+}: ConsultationFormProps) => {
+  const [formData, setFormData] = useState<FormData>(EMPTY_FORM);
 
   // ✅ Safely hydrate form when modal opens / data changes
   useEffect(() => {
@@ -24,7 +45,7 @@ const ConsultationForm = ({ isOpen, onClose, onSubmit, initialData }) => {
     }
   }, [isOpen, initialData]);
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -32,7 +53,7 @@ const ConsultationForm = ({ isOpen, onClose, onSubmit, initialData }) => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     onSubmit(formData);
   };
@@ -54,6 +75,7 @@ const ConsultationForm = ({ isOpen, onClose, onSubmit, initialData }) => {
           <button
             onClick={onClose}
             className="text-gray-400 hover:text-gray-600 text-2xl flex items-right"
+            type="button"
           >
             ×
           </button>
@@ -122,34 +144,21 @@ const ConsultationForm = ({ isOpen, onClose, onSubmit, initialData }) => {
               <option value="Velachery">Consultation with Dr. Prashantha</option>
             </select>
           </div>
+          
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Area / Location 
             </label>
             <input
-              type="location"
+              type="text"
               name="location"
               required
               value={formData.location}
               onChange={handleChange}
               className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-              placeholder="example@gmail.com"
+              placeholder="Enter your location"
             />
           </div>
-{/* 
-          <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-4 rounded-xl">
-            <div className="flex items-center gap-3">
-              <FaShieldAlt className="text-blue-600 text-xl" />
-              <div>
-                <div className="font-semibold text-blue-700">
-                  0% Interest EMI Available
-                </div>
-                <div className="text-sm text-blue-600">
-                  Flexible payment plans
-                </div>
-              </div>
-            </div>
-          </div> */}
 
           <button
             type="submit"

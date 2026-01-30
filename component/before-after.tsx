@@ -21,7 +21,7 @@ const RealPatientResults = () => {
     setCurrentSlide((prev) => (prev - 1 + images.length) % images.length);
   };
 
-  const goToSlide = (index) => {
+  const goToSlide = (index : number) => {
     setCurrentSlide(index);
   };
 

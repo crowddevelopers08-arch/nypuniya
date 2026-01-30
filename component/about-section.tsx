@@ -8,18 +8,36 @@ import {
 import "./RhinoplastyPage.css";
 import ConsultationForm from "./ConsultationForm";
 
+// Define types for form data
+interface FormData {
+  name: string;
+  phone: string;
+  email: string;
+  area: string;
+  location: string;
+}
+
+// Define types for errors
+interface FormErrors {
+  fullName?: string;
+  mobileNo?: string;
+  email?: string;
+  consultant?: string;
+  area?: string;
+  mentionArea?: string;
+}
+
 const RhinoplastyPage = () => {
   const [showForm, setShowForm] = useState(false);
-  const [formData, setFormData] = useState({
-    fullName: "",
-    mobileNo: "",
+  const [formData, setFormData] = useState<FormData>({
+    name: "",
+    phone: "",
     email: "",
-    consultant: "",
     area: "",
-    mentionArea: "",
+    location: "",
   });
 
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState<FormErrors>({});
 
   const consultants = [
     {
@@ -35,16 +53,16 @@ const RhinoplastyPage = () => {
     { id: "dr_rohit", name: "Dr. Rohit Singh", specialty: "ENT & Rhinoplasty" },
   ];
 
-  const validateForm = () => {
-    const newErrors = {};
+  const validateForm = (): FormErrors => {
+    const newErrors: FormErrors = {};
 
-    if (!formData.fullName.trim()) {
+    if (!formData.name.trim()) {
       newErrors.fullName = "Full name is required";
     }
 
-    if (!formData.mobileNo.trim()) {
+    if (!formData.phone.trim()) {
       newErrors.mobileNo = "Mobile number is required";
-    } else if (!/^\d{10}$/.test(formData.mobileNo)) {
+    } else if (!/^\d{10}$/.test(formData.phone)) {
       newErrors.mobileNo = "Please enter a valid 10-digit number";
     }
 
@@ -54,41 +72,51 @@ const RhinoplastyPage = () => {
       newErrors.email = "Please enter a valid email address";
     }
 
-    if (!formData.consultant) {
+    if (!formData.area.trim()) {
       newErrors.consultant = "Please select a consultant";
     }
 
-    if (!formData.area.trim()) {
+    if (!formData.location.trim()) {
       newErrors.area = "Area/Location is required";
     }
 
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // Handler for ConsultationForm
+  const handleConsultationSubmit = (data: FormData) => {
+    // Update local form data with submitted data
+    setFormData(data);
+    
+    // Validate the form
     const formErrors = validateForm();
 
     if (Object.keys(formErrors).length === 0) {
-      const selectedConsultant = consultants.find(
-        (c) => c.id === formData.consultant,
-      );
+      // Map the area field to consultant name for the alert
+      let consultantName = "";
+      if (data.area === "Anna Nagar") {
+        consultantName = "Assistant Doctor";
+      } else if (data.area === "Velachery") {
+        consultantName = "Dr. Prashantha";
+      }
+      
       alert(
-        `Thank you, ${formData.fullName}! Your consultation request has been submitted. We will contact you shortly at ${formData.mobileNo} to confirm your appointment with ${selectedConsultant.name}.`,
+        `Thank you, ${data.name}! Your consultation request has been submitted. We will contact you shortly at ${data.phone} to confirm your appointment with ${consultantName}.`,
       );
 
       // Reset form and close it
       setFormData({
-        fullName: "",
-        mobileNo: "",
+        name: "",
+        phone: "",
         email: "",
-        consultant: "",
         area: "",
-        mentionArea: "",
+        location: "",
       });
+      setErrors({});
       setShowForm(false);
     } else {
       setErrors(formErrors);
+      // Keep form open to show errors
     }
   };
 
@@ -146,14 +174,13 @@ const RhinoplastyPage = () => {
             <span className="button-text">Schedule Your Consultation</span>
           </button>
         </div>
-          <p className="flex justify-center mt-5">–0% Interest EMI Available–</p>
-
+        <p className="flex justify-center mt-5">–0% Interest EMI Available–</p>
       </main>
       
       <ConsultationForm 
         isOpen={showForm}
         onClose={() => setShowForm(false)}
-        onSubmit={handleSubmit}
+        onSubmit={handleConsultationSubmit}
         initialData={formData}
       />
     </div>

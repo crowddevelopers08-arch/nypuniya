@@ -1,180 +1,3 @@
-// "use client";
-
-// import React, { useState } from "react";
-// import {
-//   FaPalette,
-//   FaWind,
-//   FaClock,
-//   FaUserCircle,
-//   FaRegSmile,
-//   FaStethoscope,
-//   FaCalendarCheck,
-//   FaChevronRight,
-//   FaShieldAlt,
-//   FaHeart,
-//   FaStar,
-// } from "react-icons/fa";
-// import ConsultationForm from "./ConsultationForm";
-
-// const RhinoplastyBenefits = () => {
-//   const [showForm, setShowForm] = useState(false);
-//   const [formData, setFormData] = useState({
-//     name: "",
-//     phone: "",
-//     email: "",
-//   });
-
-//   const benefits = [
-//     {
-//       icon: (
-//         <img
-//           src="/image1.png"
-//           alt="Enhanced Facial Harmony"
-//           className="w-8 h-8 object-contain"
-//         />
-//       ),
-//       title: "Enhanced Facial Harmony",
-//       description:
-//         "Experience a newfound balance and proportion in your facial features. Rhinoplasty seamlessly aligns your nose with the contours of your face, creating a harmonious aesthetic that accentuates your unique beauty.",
-//     },
-//     {
-//       icon: (
-//         <img
-//           src="/image2.png"
-//           alt="Enhanced Facial Harmony"
-//           className="w-8 h-8 object-contain"
-//         />
-//       ),
-//       title: "Improved Breathing",
-//       description:
-//         "Breathe easy with rhinoplasty! Beyond aesthetics, our procedures address functional concerns, ensuring optimal nasal airflow and potentially alleviating breathing difficulties for a breath of fresh air in every sense.",
-//     },
-//     {
-//       icon: (
-//         <img
-//           src="/image3.png"
-//           alt="Enhanced Facial Harmony"
-//           className="w-8 h-8 object-contain"
-//         />
-//       ),
-//       title: "Long-Lasting Results",
-//       description:
-//         "Embrace enduring beauty! While the recovery period is a small chapter, the results are a lifelong narrative. Rhinoplasty offers lasting transformation, providing you with the timeless elegance you deserve.",
-//     },
-//     {
-//       icon: (
-//         <img
-//           src="/image4.png"
-//           alt="Enhanced Facial Harmony"
-//           className="w-8 h-8 object-contain"
-//         />
-//       ),
-//       title: "Personalized Aesthetics",
-//       description:
-//         "Your vision, our expertise. Rhinoplasty is a personalized journey, allowing you to sculpt your ideal nose. From refining the tip to balancing proportions, our surgeons tailor each procedure to your unique desires.",
-//     },
-//     {
-//       icon: (
-//         <img
-//           src="/image5.png"
-//           alt="Enhanced Facial Harmony"
-//           className="w-8 h-8 object-contain"
-//         />
-//       ),
-//       title: "Rejuvenation and Aging",
-//       description:
-//         "Turn back the clock gracefully. Rhinoplasty, as part of facial rejuvenation, rejuvenates the nose's appearance, countering the effects of aging and contributing to a more youthful and refreshed look.",
-//     },
-//     {
-//       icon: (
-//         <img
-//           src="/image6.png"
-//           alt="Enhanced Facial Harmony"
-//           className="w-8 h-8 object-contain"
-//         />
-//       ),
-//       title: "Correcting Nasal Deformities",
-//       description:
-//         "Bid farewell to nasal irregularities. Whether it's a hump on the bridge, a drooping tip, or asymmetry, rhinoplasty is the key to addressing deformities and unveiling a symmetrical, pleasing nasal appearance.",
-//     },
-//   ];
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     alert(
-//       `Thank you ${formData.name}! We'll contact you at ${formData.phone} to schedule your consultation.`,
-//     );
-//     setFormData({ name: "", phone: "", email: "" });
-//     setShowForm(false);
-//   };
-
-//   return (
-//     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white font-sans">
-//       {/* Benefits Section */}
-//       <main className="container mx-auto px-4 py-10 md:py-12">
-//         <div className="text-center mb-8 md:mb-12">
-//           <div className="inline-flex items-center gap-2 bg-blue-50 px-4 py-2 rounded-full mb-3">
-//             <FaStar className="text-blue-600" />
-//             <span className="text-sm font-semibold text-blue-700">
-//               Why Choose Our Rhinoplasty
-//             </span>
-//           </div>
-//           <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold mb-4 text-blue-900">
-//             Benefits of Rhinoplasty at Nypunya Aesthetics
-//           </h2>
-//           <p className="text-gray-600 text-md  max-w-2xl mx-auto">
-//             Each benefit is carefully crafted to enhance both form and function,
-//             giving you the confidence you deserve.
-//           </p>
-//         </div>
-
-//         {/* Benefits Grid - Single Color Scheme */}
-//         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-//           {benefits.map((benefit, index) => (
-//             <div
-//               key={index}
-//               className="group relative bg-white border border-blue-100 rounded-2xl p-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl overflow-hidden"
-//             >
-//               {/* Icon with consistent color */}
-//               <div className="relative z-10 w-14 h-14 rounded-xl bg-[white] flex items-center justify-center text-red mb-5 shadow-md">
-//                 {benefit.icon}
-//               </div>
-
-//               {/* Content */}
-//               <h3 className="text-xl font-bold mb-3 text-blue-900">
-//                 {benefit.title}
-//               </h3>
-//               <p className="text-gray-600 leading-relaxed text-sm md:text-base">
-//                 {benefit.description}
-//               </p>
-
-//               {/* Hover Indicator - Same color */}
-//               <div className="absolute bottom-0 left-0 h-1 w-0 group-hover:w-full bg-blue-900 transition-all duration-500"></div>
-//             </div>
-//           ))}
-//         </div>
-//         {/* Qualifications Section */}
-//         <div className="btns">
-//           <button
-//             className="primary-cta-button"
-//             onClick={() => setShowForm(true)}
-//           >
-//             <FaCalendarCheck className="button-icon" />
-//             Schedule Your Consultation
-//           </button>
-//         </div>
-//       </main>
-//       <ConsultationForm
-//         isOpen={showForm}
-//         onClose={() => setShowForm(false)}
-//         onSubmit={handleSubmit}
-//         initialData={formData}
-//       />
-//     </div>
-//   );
-// };
-
-// export default RhinoplastyBenefits;
 "use client";
 
 import React, { useState } from "react";
@@ -185,14 +8,34 @@ import {
 } from "react-icons/fa";
 import ConsultationForm from "./ConsultationForm";
 
+// Define FormData interface (you should have this in a shared types file)
+interface FormData {
+  name: string;
+  phone: string;
+  email: string;
+  area: string;
+  location: string;
+}
+
 const RhinoplastyBenefits = () => {
   const [showForm, setShowForm] = useState(false);
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     phone: "",
     email: "",
+    area: "",
+    location: ""
   });
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Define onSubmit handler for ConsultationForm
+  const handleSubmit = (data: FormData) => {
+    console.log("Form submitted:", data);
+    // Handle form submission logic here
+    setFormData({ name: "", phone: "", email: "", area: "", location: "" });
+    setShowForm(false);
+    alert("Thank you! We'll contact you shortly to schedule your consultation.");
+  };
 
   const benefits = [
     {
@@ -269,15 +112,6 @@ const RhinoplastyBenefits = () => {
     },
   ];
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert(
-      `Thank you ${formData.name}! We'll contact you at ${formData.phone} to schedule your consultation.`,
-    );
-    setFormData({ name: "", phone: "", email: "" });
-    setShowForm(false);
-  };
-
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % benefits.length);
   };
@@ -286,7 +120,7 @@ const RhinoplastyBenefits = () => {
     setCurrentSlide((prev) => (prev - 1 + benefits.length) % benefits.length);
   };
 
-  const goToSlide = (index) => {
+  const goToSlide = (index: number) => {
     setCurrentSlide(index);
   };
 
@@ -403,9 +237,9 @@ const RhinoplastyBenefits = () => {
           </button>
         </div>
         <p className="flex justify-center mt-5">–0% Interest EMI Available–</p>
-
       </main>
 
+      {/* ConsultationForm with all required props */}
       <ConsultationForm
         isOpen={showForm}
         onClose={() => setShowForm(false)}

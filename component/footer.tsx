@@ -5,9 +5,18 @@ import { FaHeart, FaCalendarCheck, FaChevronRight, FaShieldAlt } from "react-ico
 import ConsultationForm from "./ConsultationForm";
 import FooterAlternative from "./endfooter";
 
+// Define the FormData type to match what ConsultationForm expects
+interface FormData {
+  name: string;
+  phone: string;
+  email: string;
+  area: string;
+  location: string;
+}
+
 const NypunyaAesthetics = () => {
   const [showForm, setShowForm] = useState(false);
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     phone: "",
     email: "",
@@ -15,7 +24,8 @@ const NypunyaAesthetics = () => {
     location: ""
   });
 
-  const handleSubmit = (data) => {
+  // Updated to accept FormData instead of number
+  const handleSubmit = (data: FormData) => {
     console.log("Form submitted:", data);
     setFormData({ name: "", phone: "", email: "", area: "", location: "" });
     setShowForm(false);
@@ -55,6 +65,7 @@ const NypunyaAesthetics = () => {
               <button 
                 onClick={() => setShowForm(true)}
                 className="group bg-white text-blue-900 hover:bg-blue-50 font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-full text-sm sm:text-base md:text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl shadow-lg inline-flex items-center gap-2 sm:gap-3 w-full sm:w-auto justify-center"
+                type="button"
               >
                 <FaCalendarCheck className="text-lg sm:text-xl" />
                 <span>Book Your Consultation</span>
