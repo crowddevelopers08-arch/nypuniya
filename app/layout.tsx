@@ -50,7 +50,7 @@ export default function RootLayout({
       className={`${geist.variable} ${manrope.variable} ${outfit.variable} antialiased`}
     >
       <head />
-      <body className="font-outfit">{children}</body>
+      <body className="--font-outfit">{children}</body>
     </html>
   )
 }

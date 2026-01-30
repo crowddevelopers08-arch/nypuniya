@@ -1,62 +1,70 @@
-import React from "react"
+"use client"
 
-type ClinicHeaderProps = {
+import { useEffect, useState } from "react"
+
+interface ClinicHeaderProps {
   logoSrc?: string
-  clinicName?: string
-  tagline?: string
+  phoneNumber?: string
   phoneLabel?: string
-  onCallNow?: () => void
 }
 
 export default function ClinicHeader({
-  logoSrc = "/logo.png",
-  clinicName = "NYPUNYA AESTHETIC CLINIC",
-  tagline = "ONLY THE BEST FOR YOU",
+  logoSrc = "/scaled.png", // your uploaded logo
+  phoneNumber = "+91 91805 011908",
   phoneLabel = "Call Now",
-  onCallNow,
 }: ClinicHeaderProps) {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  const telLink = `tel:${phoneNumber.replace(/\s+/g, "")}`
+
   return (
-    <header className="w-full bg-white border-y border-neutral-200">
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10">
-        <div className="h-[74px] sm:h-[88px] lg:h-[98px] flex items-center justify-between">
-          <div className="flex items-center gap-3 sm:gap-4 min-w-0">
+    <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-200 shadow-sm">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 lg:h-25 items-center justify-between">
+
+          {/* Logo ONLY */}
+          <div
+            className={`transition-all duration-500 ${
+              mounted ? "opacity-100 scale-100" : "opacity-0 scale-95"
+            }`}
+          >
             <img
               src={logoSrc}
-              alt={clinicName}
-              className="h-10 sm:h-12 lg:h-14 w-auto object-contain shrink-0"
-              draggable={false}
+              alt="Clinic Logo"
+              className="h-13 sm:h-12 lg:h-23 w-auto object-contain"
             />
-
-            <div className="min-w-0 leading-none">
-              <div className="text-[#0A2EA6] font-semibold tracking-[0.4px] text-[16px] sm:text-[20px] lg:text-[28px] truncate">
-                {clinicName}
-              </div>
-              <div className="mt-1 sm:mt-1.5 text-[#D28C97] uppercase tracking-[2px] text-[10px] sm:text-[12px] lg:text-[13px] font-medium truncate">
-                {tagline}
-              </div>
-            </div>
           </div>
 
-          <button
-            type="button"
-            onClick={onCallNow}
-            className="shrink-0 h-9 sm:h-10 lg:h-11 px-4 sm:px-5 lg:px-6 bg-[#1E4FA8] text-white rounded-md flex items-center gap-2 shadow-sm active:scale-[0.99] transition"
-          >
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              className="shrink-0"
-              aria-hidden="true"
-            >
-              <path
-                d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1C10.07 21 3 13.93 3 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.24 1.02l-2.2 2.2z"
-                fill="currentColor"
-              />
-            </svg>
-            <span className="text-sm sm:text-[15px] font-semibold">{phoneLabel}</span>
-          </button>
+          {/* Call Button */}
+<a
+  href={telLink}
+  className={`hidden sm:inline-flex items-center space-x-3 bg-[#0d47a1] text-white px-5 py-3.5 rounded-3xl shadow-md hover:shadow-lg transition-all duration-300 ${
+    mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+  }`}
+>
+  {/* Phone Icon */}
+  <svg
+    className="h-5 w-5"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+    />
+  </svg>
+
+  <span className="text-md font-medium">{phoneLabel}</span>
+</a>
+
+
         </div>
       </div>
     </header>
