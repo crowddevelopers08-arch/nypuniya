@@ -41,7 +41,7 @@ const RealPatientResults = () => {
       <div className="md:hidden max-w-4xl mx-auto">
         <div className="relative bg-white rounded-2xl shadow-lg p-4">
           {/* Carousel Container */}
-          <div className="relative w-full h-[300px] sm:h-[350px] overflow-hidden rounded-xl">
+          <div className="relative w-full h-[210px] sm:h-[350px] overflow-hidden rounded-xl">
             <div
               className="flex transition-transform duration-300 ease-in-out h-full"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -107,7 +107,7 @@ const RealPatientResults = () => {
                 onClick={() => goToSlide(index)}
                 className={`w-2 h-2 rounded-full transition-all duration-200 ${
                   index === currentSlide
-                    ? "bg-blue-700 w-6"
+                    ? "bg-[002171] w-6"
                     : "bg-blue-200"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}

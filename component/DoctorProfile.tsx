@@ -19,10 +19,10 @@ const DoctorProfile = () => {
           <div className="lg:col-span-5 flex flex-col order-1 lg:order-2">
             {/* Mobile Header - Only shows on mobile */}
             <div className="lg:hidden text-center max-sm:mb-4 mb-6">
-              <h1 className="text-3xl font-bold text-blue-900 max-sm:mb-0 mb-2">
+              <h1 className="text-2xl md:4xl font-bold text-blue-900 max-sm:mb-0 mb-2">
                 Dr. Prashantha Kesari
               </h1>
-              <p className="text-gray-600">
+              <p className="text-gray-600  sm:text-lg text-md">
                 Senior Consultant Cosmetic Plastic Surgeon
               </p>
             </div>

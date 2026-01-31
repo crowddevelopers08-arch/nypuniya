@@ -148,17 +148,18 @@
 }
 
 .image-placeholder {
-  width: min(300px, 80vw);
-  height: min(300px, 80vw);
-  /* background -: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary) 100%); */
+  width: min(400px, 90vw);
+  height: min(300px, 70vw); /* Changed from equal width/height to rectangular */
   background-image: url('/doctors.jpg');
   background-size: cover;
-  border-radius: 50%;
+  background-position: center;
+  border-radius: var(--radius); /* Use the CSS variable for consistent radius */
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--white);
   box-shadow: var(--shadow-lg);
+  overflow: hidden;
 }
 
 .image-content {
@@ -345,7 +346,11 @@
   .rhinoplasty-main {
     padding: 2.5rem 1rem;
   }
-  
+  .intro-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
   .intro-section {
     padding: 2rem;
   }
@@ -365,7 +370,8 @@
   }
   
   .intro-image {
-    order: 1; /* Before text */
+    order: 2;
+    width: 100%;
   }
   
   .lead-text {
@@ -376,6 +382,8 @@
   .description-text {
     font-size: 1.05rem;
     line-height: 1.6;
+      order: 3;
+    width: 100%;
   }
   
   .image-placeholder {
@@ -386,6 +394,10 @@
   .primary-cta-button {
     padding: 0.875rem 2rem;
     font-size: 1.1rem;
+  }
+   .lead-text-container {
+    order: 1;
+    width: 100%;
   }
 }
 
@@ -406,7 +418,7 @@
   }
   
   .section-title {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
   }
   
   .section-title h2 {
@@ -415,7 +427,7 @@
   }
   
   .intro-content {
-    gap: 2rem;
+    gap: 1rem;
   }
   
   /* Mobile: Hide desktop text, show mobile text below image */
@@ -679,5 +691,45 @@
   
   .description-text {
     color: var(--text-light);
+  }
+}
+@media (max-width: 767px) {
+  .image-placeholder {
+    width: 100%;
+    height: min(250px, 60vw);
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+/* Keep desktop layout the same */
+@media (min-width: 768px) {
+  .intro-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+  
+  /* Desktop: Show text on left, hide mobile text */
+  .intro-text.desktop-text {
+    display: flex;
+    order: 1;
+    text-align: left;
+  }
+  
+  .intro-text.mobile-text {
+    display: none; /* Hide mobile text on desktop */
+  }
+  
+  .intro-image {
+    order: 2;
+  }
+  
+  .image-placeholder {
+    border-radius: var(--radius);
+  }
+  
+  .lead-text,
+  .description-text {
+    text-align: left;
   }
 }

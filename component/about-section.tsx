@@ -121,7 +121,7 @@ const RhinoplastyPage = () => {
   };
 
   return (
-    <div className="rhinoplasty-container">
+     <div className="rhinoplasty-container">
       {/* Main Content */}
       <main className="rhinoplasty-main">
         <div className="content-wrapper">
@@ -133,7 +133,8 @@ const RhinoplastyPage = () => {
             </div>
 
             <div className="intro-content">
-              <div className="intro-text">
+              {/* Desktop version - shows text on left, image on right */}
+              <div className="intro-text desktop-text">
                 <p className="lead-text">
                   At <strong>Nypunya Aesthetics</strong>, we specialize in the
                   delicate art of
@@ -152,6 +153,19 @@ const RhinoplastyPage = () => {
                 </p>
               </div>
 
+              {/* Mobile version - image comes after lead text */}
+              <div className="intro-text mobile-text">
+                <div className="lead-text-container">
+                  <p className="lead-text">
+                    At <strong>Nypunya Aesthetics</strong>, we specialize in the
+                    delicate art of
+                    <span className="highlight"> rhinoplasty</span>, often
+                    referred to as a<span className="highlight"> "nose job"</span>{" "}
+                    or <span className="highlight">"nose reshaping."</span>
+                  </p>
+                </div>
+              </div>
+
               <div className="intro-image">
                 <div className="image-placeholder">
                   <div className="image-content">
@@ -159,6 +173,18 @@ const RhinoplastyPage = () => {
                     <p>Expert Rhinoplasty Care</p> */}
                   </div>
                 </div>
+              </div>
+
+              {/* Mobile version - description comes after image */}
+              <div className="intro-text mobile-text">
+                <p className="description-text">
+                  This transformative plastic surgery procedure goes beyond mere
+                  aesthetics — it's about restoring form, function, and
+                  confidence. Our skilled surgeons seamlessly blend science and
+                  art, addressing concerns such as removing bumps, refining
+                  nostril width, adjusting angles, and correcting injuries or
+                  birth defects that impact breathing.
+                </p>
               </div>
             </div>
           </section>
