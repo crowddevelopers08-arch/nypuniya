@@ -73,10 +73,10 @@ const PrivacyPolicy = () => {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-8">
         {/* Grid Layout for Sections */}
-        <div className="grid lg:grid-cols-2 gap-4 lg:gap-8 max-sm:mb-6 mb-8">
+        <div className="grid lg:grid-cols-2 gap-4 lg:gap-6 max-sm:mb-6 mb-6">
           {/* Section 1: Information We Collect */}
           <section className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 border border-blue-100 hover:shadow-2xl transition-all duration-300">
-            <div className="flex items-center space-x-4 max-sm:mb-2 mb-6">
+            <div className="flex items-center space-x-4 max-sm:mb-2 mb-2">
               <div className="bg-gradient-to-br from-blue-100 to-blue-50 rounded-full p-3">
                 <FileText className="w-6 h-6 text-blue-900" />
               </div>
@@ -84,10 +84,10 @@ const PrivacyPolicy = () => {
                 1. Information We Collect
               </h2>
             </div>
-            <p className="text-gray-600 max-sm:mb-2 mb-4 text-base sm:text-lg">
+            <p className="text-gray-600 max-sm:mb-2 mb-2 text-base sm:text-lg">
               We may collect the following information:
             </p>
-            <ul className=" max-sm:space-y-2 space-y-3">
+            <ul className=" max-sm:space-y-2 space-y-1">
               {[
                 "Name, age, gender",
                 "Contact details: phone number, email address",
@@ -108,7 +108,7 @@ const PrivacyPolicy = () => {
 
           {/* Section 2: How We Use Your Information */}
           <section className="bg-gradient-to-br from-rose-50 to-pink-50 rounded-2xl shadow-xl p-6 sm:p-8 border border-rose-100 hover:shadow-2xl transition-all duration-300">
-            <div className="flex items-center space-x-4 max-sm:mb-2 mb-6">
+            <div className="flex items-center space-x-4 max-sm:mb-2 mb-2">
               <div className="bg-white rounded-full p-3 shadow-md">
                 <Eye className="w-6 h-6 text-rose-500" />
               </div>
@@ -116,8 +116,8 @@ const PrivacyPolicy = () => {
                 2. How We Use Your Information
               </h2>
             </div>
-            <p className="text-gray-600 max-sm:mb-2 mb-4 text-base sm:text-lg">We use your data for:</p>
-            <ul className="space-y-3 max-sm:space-y-2">
+            <p className="text-gray-600 max-sm:mb-2 mb-2 text-base sm:text-lg">We use your data for:</p>
+            <ul className="space-y-1 max-sm:space-y-2">
               {[
                 "Booking and managing appointments",
                 "Sending confirmation or reminder emails/SMS",
@@ -138,7 +138,7 @@ const PrivacyPolicy = () => {
 
           {/* Section 3: Sharing Your Data */}
           <section className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 border border-blue-100 hover:shadow-2xl transition-all duration-300">
-            <div className="flex items-center space-x-4 max-sm:mb-2 mb-6">
+            <div className="flex items-center space-x-4 max-sm:mb-2 mb-2">
               <div className="bg-gradient-to-br from-blue-100 to-blue-50 rounded-full p-3">
                 <Users className="w-6 h-6 text-blue-900" />
               </div>
@@ -146,12 +146,12 @@ const PrivacyPolicy = () => {
                 3. Sharing Your Data
               </h2>
             </div>
-            <p className="text-gray-700 mb-4 max-sm:mb-2 text-base sm:text-lg">
+            <p className="text-gray-700 mb-2 max-sm:mb-2 text-base sm:text-lg">
               We{" "}
               <span className="font-bold text-blue-900">do not sell or rent</span>{" "}
               your data. We may share your data:
             </p>
-            <ul className="space-y-3 max-sm:space-y-2">
+            <ul className="space-y-1 max-sm:space-y-2">
               {[
                 "With internal staff or doctors for consultation purposes",
                 "With trusted third-party services (e.g. SMS/Email providers) under confidentiality",
@@ -170,7 +170,7 @@ const PrivacyPolicy = () => {
 
           {/* Section 4: Cookies and Tracking */}
           <section className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl shadow-xl p-6 sm:p-8 border border-amber-100 hover:shadow-2xl transition-all duration-300">
-            <div className="flex items-center space-x-4 max-sm:mb-2 mb-6">
+            <div className="flex items-center space-x-4 max-sm:mb-2 mb-2">
               <div className="bg-white rounded-full p-3 shadow-md">
                 <Cookie className="w-6 h-6 text-amber-600" />
               </div>
@@ -186,7 +186,7 @@ const PrivacyPolicy = () => {
 
           {/* Section 5: Data Security */}
           <section className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 border border-blue-100 hover:shadow-2xl transition-all duration-300">
-            <div className="flex items-center space-x-4 max-sm:mb-2 mb-6">
+            <div className="flex items-center space-x-4 max-sm:mb-2 mb-2">
               <div className="bg-gradient-to-br from-green-100 to-green-50 rounded-full p-3">
                 <Lock className="w-6 h-6 text-green-700" />
               </div>
@@ -202,14 +202,14 @@ const PrivacyPolicy = () => {
 
           {/* Section 6: Your Rights */}
           <section className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl shadow-xl p-6 sm:p-8 border border-purple-100 hover:shadow-2xl transition-all duration-300">
-            <div className="flex items-center space-x-4 max-sm:mb-2 mb-6">
+            <div className="flex items-center space-x-4 max-sm:mb-2 mb-2">
               <div className="bg-white rounded-full p-3 shadow-md">
                 <Shield className="w-6 h-6 text-purple-600" />
               </div>
               <h2 className="text-xl sm:text-2xl font-bold text-gray-800">6. Your Rights</h2>
             </div>
-            <p className="text-gray-600  max-sm:mb-2 mb-4 text-base sm:text-lg">You have the right to:</p>
-            <ul className="space-y-3 max-sm:space-y-2">
+            <p className="text-gray-600  max-sm:mb-2 mb-2 text-base sm:text-lg">You have the right to:</p>
+            <ul className="space-y-1 max-sm:space-y-2">
               {[
                 "Request access or correction to your personal data",
                 "Withdraw consent at any time",
@@ -228,24 +228,24 @@ const PrivacyPolicy = () => {
         </div>
 
         {/* Section 7: Contact Us - Full Width */}
-        <section className="bg-gradient-to-br from-blue-900 to-blue-800 rounded-2xl shadow-xl p-8 sm:p-10 text-white mb-5">
-          <div className="flex items-center space-x-2 mb-2">
-            <div className="bg-white/20 backdrop-blur-sm rounded-full p-4">
+        <section className="bg-gradient-to-br from-blue-900 to-blue-800 rounded-2xl shadow-xl p-8 sm:p-8 text-white mb-5">
+          <div className="flex justify-center items-center space-x-2 mb-0">
+            {/* <div className="bg-white/20 backdrop-blur-sm rounded-full p-4">
               <Mail className="w-8 h-8 text-white" />
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-bold">7. Contact Us</h2>
+            </div> */}
+            <h2 className="text-2xl sm:text-3xl font-bold">Contact Us</h2>
           </div>
-          <p className="text-blue-100 mb-4 text-base sm:text-lg">
+          <p className="text-blue-100 max-sm:mb-2 mb-5 text-base sm:text-lg flex justify-center">
             For questions or requests related to this privacy policy:
           </p>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-4">
             {/* Address */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all duration-300">
-              <div className="flex items-start space-x-4">
-                <MapPin className="w-6 h-6 text-rose-300 flex-shrink-0 mt-1" />
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20 transition-all duration-300">
+              <div className="flex items-start space-x-2">
+                <MapPin className="w-6 h-6 text-rose-300 flex-shrink-0 mt-0" />
                 <div>
-                  <h3 className="font-bold text-lg mb-2">Our Location</h3>
+                  <h3 className="font-bold text-lg mb-0">Our Location</h3>
                   <p className="text-blue-100 leading-relaxed text-sm">
                     #3, 1st Cross, Off 24th Main, 2nd Phase, J. P. Nagar,
                     Bengaluru
@@ -257,11 +257,11 @@ const PrivacyPolicy = () => {
             {/* Phone */}
             
            <a   href="tel:+919380902110"
-              className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all duration-300 flex items-start space-x-4"
+              className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all duration-300 flex items-start space-x-2"
             >
-              <Phone className="w-6 h-6 text-rose-300 flex-shrink-0 mt-1" />
+              <Phone className="w-6 h-6 text-rose-300 flex-shrink-0 mt-0" />
               <div>
-                <p className="text-sm text-blue-100 mb-1">Call Us</p>
+                <p className="text-sm text-blue-100 mb-0">Call Us</p>
                 <p className="font-bold text-lg">+91 93809 02110</p>
               </div>
             </a>
@@ -269,9 +269,9 @@ const PrivacyPolicy = () => {
             {/* Email */}
             
             <a  href="mailto:clinic.nypunyaaesthetic@gmail.com"
-              className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all duration-300 flex items-start space-x-4"
+              className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all duration-300 flex items-start space-x-2"
             >
-              <Mail className="w-6 h-6 text-rose-300 flex-shrink-0 mt-1" />
+              <Mail className="w-6 h-6 text-rose-300 flex-shrink-0 mt-0" />
               <div>
                 <p className="text-sm text-blue-100 mb-1">Email Us</p>
                 <p className="font-bold text-sm break-all">
