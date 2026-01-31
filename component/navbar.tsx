@@ -24,7 +24,7 @@ export default function ClinicHeader({
   return (
     <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-200 shadow-sm">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 lg:h-25 items-center justify-between">
+        <div className="flex h-22 lg:h-25 items-center justify-between">
           {/* Logo ONLY */}
           <div
             className={`transition-all duration-500 ${
@@ -34,14 +34,14 @@ export default function ClinicHeader({
             <img
               src={logoSrc}
               alt="Clinic Logo"
-              className="h-13 sm:h-12 lg:h-23 w-auto object-contain"
+              className="h-22 sm:h-15 lg:h-23 w-auto object-contain"
             />
           </div>
 
           {/* Call Button */}
           <a
             href={telLink}
-            className={`hidden sm:inline-flex items-center space-x-3 bg-[#0d47a1] text-white px-5 py-3.5 rounded-3xl shadow-md hover:shadow-lg transition-all duration-300 ${
+            className={`hidden md:inline-flex items-center space-x-3 bg-[#0d47a1] text-white px-5 py-3.5 rounded-3xl shadow-md hover:shadow-lg transition-all duration-300 ${
               mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
