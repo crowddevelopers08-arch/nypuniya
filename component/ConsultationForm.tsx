@@ -61,14 +61,14 @@ const ConsultationForm = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 md:p-6 z-50 animate-fadeIn">
-      <div className="bg-white rounded-xl sm:rounded-2xl max-w-xs xs:max-w-sm sm:max-w-md md:max-w-lg w-full p-4 sm:p-6 md:p-8 animate-slideUp max-h-[90vh] overflow-y-auto">
+    <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 z-50 animate-fadeIn">
+      <div className="bg-white rounded-xl sm:rounded-2xl max-w-xs xs:max-w-sm sm:max-w-md md:max-w-lg w-full p-4 sm:p-6 md:p-8 animate-slideUp">
         <div className="flex justify-between items-center mb-4 sm:mb-2">
           <div className="flex flex-col">
-            <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-800">
+            <h3 className="text-xl sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-0">
               Book Your Consultation
             </h3>
-            <p className="text-gray-600 mt-1 text-sm sm:text-base">
+            <p className="text-gray-600  text-sm sm:text-base">
               Please enter your details below
             </p>
           </div>
@@ -164,7 +164,7 @@ const ConsultationForm = ({
 
           <button
             type="submit"
-            className="w-full mt-0 sm:mt-2 bg-[#002171] hover:bg-blue-900 text-white font-semibold sm:font-bold py-3 sm:py-4 px-4 sm:px-6 cursor-pointer rounded-lg sm:rounded-xl text-base sm:text-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl"
+            className="w-full mt-4 sm:mt-6 bg-[#002171] hover:bg-blue-900 text-white font-semibold sm:font-bold py-3 sm:py-4 px-4 sm:px-6 cursor-pointer rounded-lg sm:rounded-xl text-base sm:text-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl"
           >
             <FaCalendarCheck className="inline mr-2 sm:mr-3 w-4 h-4 sm:w-5 sm:h-5" />
             Schedule Appointment

@@ -144,10 +144,10 @@ export function VideoTestimonials() {
         <div className="container mx-auto px-3 xs:px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-8 xs:mb-10 max-[470px]:mb-4 sm:mb-4 md:mb-6">
-            <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-bold text-[var(--primary)] mb-1 xs:mb-1 sm:mb-3">
+            <h2 className="text-2xl xs:text-2xl sm:text-4xl md:text-4xl lg:text-4xl font-bold text-[var(--primary)] mb-1 xs:mb-1 sm:mb-3">
               Real Patient, Real Transformation
             </h2>
-            <p className="text-base xs:text-lg sm:text-xl md:text-md text-[#4a5565] max-w-xs xs:max-w-sm sm:max-w-md md:max-w-2xl mx-auto px-2 xs:px-0">
+            <p className="text-base xs:text-md sm:text-md md:text-md text-[#4a5565] max-w-xs xs:max-w-sm sm:max-w-md md:max-w-2xl mx-auto px-2 xs:px-0">
               Watch our patients share their authentic experiences and remarkable results
             </p>
           </div>
@@ -185,7 +185,7 @@ export function VideoTestimonials() {
                           {/* Play Button Overlay */}
                           <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
                             <div className="w-14 h-14 bg-[#0d47a1] rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300">
-                              <Play className="w-5 h-5 text-black ml-1" />
+                              <Play className="w-5 h-5 text-white ml-1" />
                             </div>
                           </div>
 
@@ -249,7 +249,7 @@ export function VideoTestimonials() {
                   >
                     <CardContent className="p-0 h-full">
                       {/* Video Thumbnail with YouTube preview */}
-                      <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-gray-200 h-full">
+                      <div className="relative lg:h-80 lg:w-full overflow-hidden rounded-lg bg-gray-200 h-full">
                         <img
                           src={getYouTubeThumbnail(video.youtubeUrl)}
                           alt="YouTube video thumbnail"
@@ -267,7 +267,7 @@ export function VideoTestimonials() {
                         {/* Play Button Overlay */}
                         <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
                           <div className="w-16 h-16 bg-[var(--primary)] rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300">
-                            <Play className="w-6 h-6 text-black ml-1" />
+                            <Play className="w-6 h-6 text-white ml-1" />
                           </div>
                         </div>
 

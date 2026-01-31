@@ -44,23 +44,23 @@ const NypunyaAesthetics = () => {
           
           <div className="relative z-10 max-w-3xl mx-auto text-center px-2 sm:px-4">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-full mb-4 sm:mb-6">
+            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-full mb-2 sm:mb-4">
               <FaHeart className="text-rose-300 text-sm sm:text-base" />
               <span className="text-xs sm:text-sm font-semibold">Limited Time Offer</span>
             </div>
             
             {/* Main Heading */}
-            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 px-2">
+            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-2 px-2">
               Ready to Begin Your Transformation Journey?
             </h3>
             
             {/* Description */}
-            <p className="text-blue-100 text-sm sm:text-base md:text-lg mb-6 sm:mb-8 max-w-2xl mx-auto px-2 sm:px-0">
+            <p className="text-blue-100 text-sm sm:text-base md:text-lg mb-3 sm:mb-5 max-w-2xl mx-auto px-2 sm:px-0">
               Take the first step towards enhanced confidence and natural beauty. Our expert surgeons are ready to guide you through every step of your rhinoplasty journey.
             </p>
             
             {/* CTA Buttons and Info */}
-            <div className="flex flex-col gap-4 sm:gap-6 justify-center items-center">
+            <div className="flex flex-col gap-4 sm:gap-4 justify-center items-center">
               {/* Main Button */}
               <button 
                 onClick={() => setShowForm(true)}

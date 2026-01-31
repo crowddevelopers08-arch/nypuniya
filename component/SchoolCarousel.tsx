@@ -299,7 +299,7 @@ const SchoolCarousel = () => {
     title: {
       fontWeight: "700",
       textAlign: "center",
-      margin: "0 auto clamp(2rem, 5vw, 2rem) auto",
+      margin: "0 auto clamp(0rem, 5vw, 1rem) auto",
       color: "#002171",
       padding: "0 clamp(1rem, 3vw, 2rem)",
       width: "100%",
